@@ -1,0 +1,304 @@
+/* General Reset and Styling */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html,
+body {
+   width: 100%;
+   height: 100%;
+   background-color: #f8f9fa;
+}
+
+a {
+   color: black;
+   text-decoration: none;
+}
+
+.App {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.content {
+   flex: 1;
+}
+
+/* Home Page Carousel Styling */
+.home-body {
+   height: 80vh;
+   overflow: hidden;
+}
+
+.home-body .carousel {
+   height: 100%;
+}
+
+.home-body .carousel .carousel-item {
+   height: 100%;
+}
+
+.home-body .carousel .carousel-item img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   background-size: cover;
+}
+
+/* Property Cards */
+.property-content {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   padding: 20px;
+}
+
+.card {
+   margin: 15px;
+   width: 280px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease;
+}
+
+.card:hover {
+   transform: translateY(-5px);
+}
+
+.card .card-body {
+   text-align: center;
+   padding: 15px;
+}
+
+.card .card-body h5 {
+   font-size: 1.25rem;
+   color: #333;
+}
+
+.card img {
+   width: 100%;
+   height: 160px;
+   object-fit: cover;
+   border-bottom: 1px solid #ddd;
+}
+
+/* Chat Interface */
+.chat-container {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   padding: 20px;
+}
+
+.chat-container h1 {
+   font-size: 22px;
+   text-align: center;
+   color: #333;
+   margin-bottom: 20px;
+}
+
+.message-window {
+   overflow-y: auto;
+   padding: 10px;
+   max-height: 200px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   background-color: #f9f9f9;
+}
+
+.message {
+   background-color: #f0f0f0;
+   padding: 10px;
+   margin-bottom: 10px;
+   border-radius: 8px;
+   color: #555;
+}
+
+.input-container {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   background-color: #ffffff;
+}
+
+.input-container textarea {
+   flex: 1;
+   padding: 10px;
+   margin-right: 10px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   resize: none;
+}
+
+.input-container button {
+   padding: 10px;
+   color: white;
+   background-color: #ffc107;
+   border: none;
+   border-radius: 50%;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+.input-container button:hover {
+   background-color: #e0a800;
+}
+
+/* Modal Form Styling */
+.application-form {
+   padding: 20px;
+   background-color: #ffffff;
+}
+
+.application-form h3, .application-form h5 {
+   color: #333;
+}
+
+.application-form .divider {
+   height: 2px;
+   background: #333;
+   margin: 20px 0;
+}
+
+.application-form .ant-form-item label {
+   color: #333;
+   font-weight: 600;
+}
+
+.application-form .ant-input,
+.application-form .ant-input-number {
+   border-radius: 5px;
+   padding: 8px;
+   border: 1px solid #ddd;
+}
+
+.application-form .ant-input:focus,
+.application-form .ant-input-number:focus {
+   border-color: #ffc107;
+   box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+}
+
+.application-form .submit-button {
+   background-color: #ffc107;
+   color: white;
+   border: none;
+   padding: 8px 20px;
+   border-radius: 5px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.application-form .submit-button:hover {
+   background-color: #e0a800;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 480px) {
+   .chat-container {
+      height: auto;
+   }
+   .card {
+      width: 100%;
+      margin: 10px 0;
+   }
+   .application-form {
+      padding: 15px;
+   }
+}
+
+
+
+/* {allProperties.some((app) => (app.jobInfo._id === property._id) && (app.status === 'applied' || app.status === 'rejected' || app.status === 'selected')) ? (
+                              <p style={{ float: 'right', color: 'grey' }} variant="warning" disabled>
+                                 Already Applied
+                              </p>
+                           ) : userLoggedIn ? (
+                              <Button
+                                 style={{ float: 'right' }}
+                                 variant="outline-warning"
+                                 onClick={() => setSelectedJobId(property._id)}
+                              >
+                                 Apply Now
+                              </Button>
+                           ) : (
+                              <Button style={{ float: 'right' }} variant="outline-warning">
+                                 <Link to={'/login'}>Buy Now</Link>
+                              </Button>
+                           )} */
+/* <Modal
+                              centered
+                              open={selectedJobId === property._id}
+                              onOk={() => setSelectedJobId(null)}
+                              onCancel={() => setSelectedJobId(null)}
+                              width={1000}
+                           >
+                              <Form onFinish={() => handleSubmit(property._id)} className='m-3'>
+                                 <h3>Job Description and Skills</h3><hr />
+                                 <div className="d-flex flex-column mt-0">
+                                    <h5>Descrption:</h5><p>{property.jobDescription}</p><br />
+                                    <h5>Skills:</h5><p>{property.skills}</p><br />
+                                 </div>
+                                 <hr style={{ height: 3, background: 'black' }} />
+                                 <h3>Enter Your Details for the Application</h3><hr />
+                                 <h5>Personal Details:</h5>
+                                 <Row gutter={20}>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="Full Name" required>
+                                          <Input name='name' value={details.name} onChange={handleChange} placeholder='Enter name' />
+                                       </Form.Item>
+                                    </Col>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="Phone" required>
+                                          <Input name='phone' value={details.phone} onChange={handleChange} type='number' placeholder='Your phone' />
+                                       </Form.Item>
+                                    </Col>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="Email" required>
+                                          <Input name='email' value={details.email} onChange={handleChange} type='email' placeholder='Your email' />
+                                       </Form.Item>
+                                    </Col>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="Address" required>
+                                          <Input name='address' value={details.address} onChange={handleChange} type='text' placeholder='Your address' />
+                                       </Form.Item>
+                                    </Col>
+                                 </Row>
+                                 <h5>Highest Educational Details:</h5>
+                                 <Row gutter={20}>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="University Name" required>
+                                          <Input name='universityName' value={details.universityName} onChange={handleChange} type='text' placeholder='Your university name' />
+                                       </Form.Item>
+                                    </Col>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="Highest Degree" required>
+                                          <Input name='degree' value={details.degree} onChange={handleChange} type='text' placeholder='Your highest degree' />
+                                       </Form.Item>
+                                    </Col>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="Experience" required>
+                                          <Input name='experience' value={details.experience} onChange={handleChange} type='number' placeholder='Your experience' />
+                                       </Form.Item>
+                                    </Col>
+                                 </Row>
+                                 <h5>Resume(only in Pdf Format):</h5>
+                                 <Row gutter={20}>
+                                    <Col xs={24} md={12} lg={8}>
+                                       <Form.Item label="Resume" required>
+                                          <Input name='resume' accept="application/pdf" onChange={handleDocumentChange} type='file' />
+                                       </Form.Item>
+                                    </Col>
+                                    <br />
+                                    <Form.Item>
+                                       <Button type='submit' variant='outline-warning'>
+                                          Submit
+                                       </Button>
+                                    </Form.Item>
+                                 </Row>
+                              </Form>
+                           </Modal> */
