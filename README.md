@@ -21,7 +21,7 @@ The Home Rental Web App is a platform developed using the MERN stack (MongoDB, E
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup and Installation](#setup-and-installation)
-- [License](#license)
+  
 
 ## Features
 
